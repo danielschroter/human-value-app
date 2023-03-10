@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import QueryProvider from "./components/QueryProvider";
+
 export const metadata = {
   title: "Human Value Detector",
   description: "Detect Human Values in Arguments",
@@ -12,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <QueryProvider>
+        <body>{children}</body>
+      </QueryProvider>
     </html>
   );
 }
