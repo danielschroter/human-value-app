@@ -7,7 +7,7 @@ export default function Hero() {
   const [bio, setBio] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [requestStarted, setRequestStarted] = useState(false);
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState<string[]>([]);
 
   const getValues = async () => {
     setIsLoading(true);
