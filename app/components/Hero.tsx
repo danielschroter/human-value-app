@@ -6,27 +6,18 @@ import { useState } from "react";
 export default function Hero() {
   const [bio, setBio] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [requestStarted, setRequestStarted] = useState(false);
   const [values, setValues] = useState<string[]>([]);
 
   const getValues = async () => {
     setIsLoading(true);
     console.log("Getting in get Values", isLoading);
     const res = await fetch(`https://values.args.me/api/?argument=${bio}`);
-    // const body = await res.json();
     setIsLoading(false);
-    console.log(isLoading);
-    // console.log(body);
     return res.json();
   };
 
-  const handleClick = async () => {
-    setRequestStarted(true);
-    setIsLoading(true);
-    console.log("This is isLoading ", isLoading);
-    await refetch();
-    setIsLoading(false);
-    setRequestStarted(false);
+  const handleClick = () => {
+    refetch();
   };
 
   const { data, refetch } = useQuery(["valueData"], getValues, {
@@ -40,13 +31,9 @@ export default function Hero() {
           l.push(k);
         }
       }
-
       setValues(l);
     },
   });
-
-  // if (error) return <div>Request Failed</div>;
-  // if (isLoading) return <div>Loading...</div>;
 
   return (
     <div className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900">
