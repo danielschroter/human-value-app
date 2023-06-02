@@ -10,7 +10,6 @@ export default function Hero() {
 
   const getValues = async () => {
     setIsLoading(true);
-    console.log("Getting in get Values", isLoading);
     const res = await fetch(`https://values.args.me/api/?argument=${bio}`);
     setIsLoading(false);
     return res.json();
@@ -46,10 +45,10 @@ export default function Hero() {
             {/* <h2 className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
                   Human Value Detector
                 </h2> */}
-            <h2 className="font-extrabold text-5xl text-white ">
+            <h2 className="text-5xl text-slate-100 tracking-widest leading-snug">
               Human Value Detector
             </h2>
-            <input
+            <textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               // rows={4}
@@ -73,7 +72,6 @@ export default function Hero() {
               <div className="flex flex-wrap gap-6">
                 {values.map((v) => (
                   <div
-                    //className="text-sm text-gray-300 bg-slate-700/50 px-4 py-2 rounded-3xl shadow-md"
                     className="text-sm text-gray-300 bg-slate-700/50 px-4 py-2 rounded-3xl shadow-md border border-pink-600 hover:bg-pink-600"
                     key={v}
                   >
@@ -83,6 +81,13 @@ export default function Hero() {
               </div>
             )}
           </div>
+          {/* <a
+              href="#"
+              className="w-full p-2 rounded-full text-center border border-2 border-pink-600 text-slate-100"
+            >
+              {" "}
+              analyze{" "}
+            </a> */}
         </div>
       </div>
     </div>
