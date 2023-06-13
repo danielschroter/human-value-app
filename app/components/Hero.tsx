@@ -35,11 +35,11 @@ export default function Hero() {
   });
 
   return (
-    <div className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900">
+    <div className="flex h-full min-h-screen flex-col items-center justify-center ">
       <div className="relative w-full max-w-lg">
-        <div className="absolute top-0 w-64 h-64 bg-indigo-400 rounded-full -left-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob"></div>
+        {/* <div className="absolute top-0 w-64 h-64 bg-indigo-400 rounded-full -left-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob"></div>
         <div className="absolute top-0 rounded-full w-72 h-72 bg-pink-300 -right-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute rounded-full w-72 h-72 bg-emerald-300 -bottom-8 left-20 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute rounded-full w-72 h-72 bg-emerald-300 -bottom-8 left-20 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-4000"></div> */}
         <div className="m-8 relative space-y-4">
           <div className="flex flex-auto flex-col justify-center p-10">
             {/* <h2 className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
