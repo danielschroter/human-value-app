@@ -1,7 +1,12 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+
+import { FaAward } from "react-icons/fa";
+
+import Paper from "../assets/HumVal_paper.pdf";
 
 export default function Hero() {
   const [bio, setBio] = useState("");
@@ -35,8 +40,8 @@ export default function Hero() {
   });
 
   return (
-    <div className="flex h-full min-h-screen flex-col items-center justify-center ">
-      <div className="relative w-full max-w-lg">
+    <div className="flex h-full min-h-screen flex-col items-center justify-center text-slate-100 ">
+      <div className="relative w-full max-w-2xl">
         {/* <div className="absolute top-0 w-64 h-64 bg-indigo-400 rounded-full -left-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob"></div>
         <div className="absolute top-0 rounded-full w-72 h-72 bg-pink-300 -right-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-2000"></div>
         <div className="absolute rounded-full w-72 h-72 bg-emerald-300 -bottom-8 left-20 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-4000"></div> */}
@@ -45,9 +50,43 @@ export default function Hero() {
             {/* <h2 className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
                   Human Value Detector
                 </h2> */}
-            <h2 className="text-5xl text-slate-100 tracking-widest leading-snug">
-              Human Value Detector
+            <h2 className="text-5xl  tracking-widest leading-snug">
+              Human Value Detector <FaAward className="inline" />
             </h2>
+            <p className="mt-8 leading-6 max-w-xl">
+              Competition winning system discovering human values in arguments.
+              We presented our system at the <b>ACL 2023</b> conference and
+              published a system description paper in their proceedings.
+            </p>
+            <div className="flex flex-row gap-6 mt-8 ">
+              <a
+                href="/HumVal_paper.pdf"
+                download
+                className="border border-emerald-600 rounded-md border-2 px-4 py-2"
+              >
+                Paper
+              </a>
+              {/* <Link
+                href="#"
+                className="border border-emerald-600 rounded-md border-2 px-4 py-2"
+              >
+                Master Thesis
+              </Link> */}
+              <a
+                href="https://touche.webis.de/semeval23/touche23-web/index.html"
+                target="_blank"
+                className="border border-pink-600 rounded-md border-2 px-4 py-2"
+              >
+                Competition
+              </a>
+              <a
+                href="https://touche.webis.de/semeval23/touche23-web/index.html"
+                target="_blank"
+                className="bg-gray-700/30 backdrop-blur-md border-1 border-slate-500/10 rounded-md border-2 px-4 py-2"
+              >
+                Code
+              </a>
+            </div>
             <textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
