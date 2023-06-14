@@ -58,11 +58,11 @@ export default function Hero() {
               We presented our system at the <b>ACL 2023</b> conference and
               published a system description paper in their proceedings.
             </p>
-            <div className="flex flex-row gap-6 mt-8 text-sm">
+            <div className="flex flex-row gap-6 mt-8 text-sm flex-wrap">
               <a
                 href="/HumVal_paper.pdf"
                 download
-                className="bg-gray-700/30 backdrop-blur-md border-1 border-emerald-500/30 rounded-md border-2 px-4 py-2"
+                className="bg-gray-700/30 backdrop-blur-md  hover:scale-105 border-1 border-emerald-500/30 rounded-md border-2 px-4 py-2"
               >
                 Paper
               </a>
@@ -75,34 +75,43 @@ export default function Hero() {
               <Link
                 href="https://touche.webis.de/semeval23/touche23-web/index.html"
                 target="_blank"
-                className="bg-gray-700/30 backdrop-blur-md border-1 border-pink-500/30 rounded-md border-2 px-4 py-2"
+                className="bg-gray-700/30 backdrop-blur-md hover:scale-105 border-1 border-pink-500/30 rounded-md border-2 px-4 py-2"
               >
                 Competition
               </Link>
               <Link
                 href="https://github.com/danielschroter/human_value_detector"
                 target="_blank"
-                className="bg-gray-700/30 backdrop-blur-md border-1 border-slate-500/10 rounded-md border-2 px-4 py-2"
+                className="bg-gray-700/30 hover:scale-105 backdrop-blur-md border-1 border-slate-500/10 rounded-md border-2 px-4 py-2"
               >
                 Code
               </Link>
             </div>
             <div className="text-2xl tracking-widest mt-10">Try it out:</div>
-            <textarea
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-              // rows={4}
-              className="w-full text-gray-200 placeholder:text-gray-400 rounded-md p-2 shadow-lg border outline-none border-slate-800 bg-gray-600/20 backdrop-blur-xl my-5 focus:bg-gray-600/10"
-              placeholder={
-                "We should abandon whaling because it is a species at risk of distinction"
-              }
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleClick();
+            <div>
+              <textarea
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
+                // rows={4}
+                className="w-full h-24 text-gray-200 placeholder:text-gray-400 rounded-md p-2 shadow-lg border outline-none border-slate-800 bg-gray-600/40 backdrop-blur-xl mt-5 mb-2 focus:bg-gray-600/10"
+                placeholder={
+                  "We should abandon whaling because it is a species at risk of distinction"
                 }
-              }}
-            />
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleClick();
+                  }
+                }}
+              />
+              <button
+                onClick={handleClick}
+                disabled={isLoading}
+                className="w-full bg-slate-600/10 backdrop-blur-lg mb-8 border-slate-500/60 border py-2 rounded-md hover:scale-105"
+              >
+                Analyze
+              </button>
+            </div>
             {isLoading ? (
               <div className="relative">
                 <div className="w-5 h-5 border-purple-200 border-2 rounded-full"></div>
