@@ -93,7 +93,7 @@ export default function Hero() {
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
                 // rows={4}
-                className="w-full h-24 text-gray-200 placeholder:text-gray-400 rounded-md p-2 shadow-lg border outline-none border-slate-800 bg-gray-600/40 backdrop-blur-xl mt-5 mb-2 focus:bg-gray-600/10"
+                className="w-full h-24 text-gray-200 hover:bg-gray-600/80 transition placeholder:text-gray-400 rounded-md p-2 shadow-lg border outline-none border-slate-800 bg-gray-600/40 backdrop-blur-xl mt-5 mb-2 focus:bg-gray-600/10"
                 placeholder={
                   "We should abandon whaling because it is a species at risk of distinction"
                 }
