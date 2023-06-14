@@ -6,10 +6,10 @@ import { useState } from "react";
 
 import { FaAward } from "react-icons/fa";
 
-import Paper from "../assets/HumVal_paper.pdf";
-
 export default function Hero() {
-  const [bio, setBio] = useState("");
+  const [bio, setBio] = useState(
+    "We should abandon whaling because it is a species at risk of distinction"
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [values, setValues] = useState<string[]>([]);
 
@@ -58,11 +58,11 @@ export default function Hero() {
               We presented our system at the <b>ACL 2023</b> conference and
               published a system description paper in their proceedings.
             </p>
-            <div className="flex flex-row gap-6 mt-8 ">
+            <div className="flex flex-row gap-6 mt-8 text-sm">
               <a
                 href="/HumVal_paper.pdf"
                 download
-                className="border border-emerald-600 rounded-md border-2 px-4 py-2"
+                className="bg-gray-700/30 backdrop-blur-md border-1 border-emerald-500/30 rounded-md border-2 px-4 py-2"
               >
                 Paper
               </a>
@@ -72,21 +72,22 @@ export default function Hero() {
               >
                 Master Thesis
               </Link> */}
-              <a
+              <Link
                 href="https://touche.webis.de/semeval23/touche23-web/index.html"
                 target="_blank"
-                className="border border-pink-600 rounded-md border-2 px-4 py-2"
+                className="bg-gray-700/30 backdrop-blur-md border-1 border-pink-500/30 rounded-md border-2 px-4 py-2"
               >
                 Competition
-              </a>
-              <a
-                href="https://touche.webis.de/semeval23/touche23-web/index.html"
+              </Link>
+              <Link
+                href="https://github.com/danielschroter/human_value_detector"
                 target="_blank"
                 className="bg-gray-700/30 backdrop-blur-md border-1 border-slate-500/10 rounded-md border-2 px-4 py-2"
               >
                 Code
-              </a>
+              </Link>
             </div>
+            <div className="text-2xl tracking-widest mt-10">Try it out:</div>
             <textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
